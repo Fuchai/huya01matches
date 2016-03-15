@@ -1,5 +1,4 @@
 
-
 #include "lookInFile.h"
 
 void lookInFile (char *filename, char* pattern){
