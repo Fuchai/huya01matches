@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+result="$(mygrep inc .c)"
+#echo "${result}"
+
+mega="$(mygrep inc .c | grep -o  "\S*:" | sort -u)"
+#echo "${mega}"
+
+for word in $mega; do
+	echo -n $word ""
+	echo -ne "${result}"  | grep -o $word | wc -l | tr '\n' '\0'
+	echo " lines matched"
+done
